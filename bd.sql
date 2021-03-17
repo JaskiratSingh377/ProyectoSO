@@ -1,0 +1,72 @@
+DROP DATABASE IF EXISTS bd;
+CREATE DATABASE bd;
+USE bd;
+
+CREATE TABLE Jugador
+(
+	ID INT NOT NULL,
+	USERNAME VARCHAR(60) NOT NULL,
+	PASSWORD VARCHAR(60) NOT NULL,
+	PRIMARY KEY(ID)
+
+)ENGINE=InnoDB;
+
+CREATE TABLE Partida
+(
+	ID INT NOT NULL,
+	FECHA VARCHAR(60),
+	DURACION INT,
+	GANADOR VARCHAR(60),
+	PRIMARY KEY(ID)
+	
+)ENGINE=InnoDB;
+
+CREATE TABLE Participacion
+(
+	ID_J INT NOT NULL,
+	ID_P INT NOT NULL,
+	FOREIGN KEY(ID_J) REFERENCES Jugador(ID),
+	FOREIGN KEY(ID_P) REFERENCES Partida(ID)
+
+)ENGINE=InnoDB;
+
+INSERT INTO Jugador VALUES (1,'KingBron23','Hello');
+INSERT INTO Jugador VALUES (2,'GOAT10','Hola');
+INSERT INTO Jugador VALUES (3,'Serre7','Ola');
+INSERT INTO Jugador VALUES (4,'Dembo11','Salut');
+INSERT INTO Jugador VALUES (5,'Viniciuu21','Halo');
+
+
+SELECT * FROM Jugador;
+/*
+DELETE FROM Jugador WHERE Jugador.USERNAME = 'Serre7';
+SELECT * FROM Jugador;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
